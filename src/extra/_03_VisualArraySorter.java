@@ -2,6 +2,8 @@ package extra;
 
 import processing.core.PApplet;
 
+
+	
 /*
  * Goal: Create a program that sorts each rectangle by height!
  * 
@@ -41,9 +43,13 @@ public class _03_VisualArraySorter extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 400;
 
+    int arr[] = new int[50];
+    
     @Override
     public void settings() {
+        size(500,500);
         
+    	
     }
 
     @Override
