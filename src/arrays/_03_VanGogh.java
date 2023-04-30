@@ -54,10 +54,24 @@ public class _03_VanGogh extends PApplet {
     /*
      * Write your code below
      */
+    
+    PImage [] arr;
+    
     Brush brush;
     
+    int currentImage = 0;
+    
     void initializePaintings() {
+    	arr = new PImage[4];
         
+    	arr[0] = loadImage("./images/starryNight.jpg");
+    	arr[1] = loadImage("./images/strawHatPortrait.jpg");
+    	arr[2] = loadImage("./images/wheatField.jpg");
+    	arr[3] = loadImage("./images/painterOnRoad.jpg");
+    	
+
+    	
+    	brush.setNewPainting(arr[currentImage]);
     }
     
     void selectNextPainting() {
@@ -101,6 +115,17 @@ public class _03_VanGogh extends PApplet {
     @Override
     public void keyPressed() {
         if (keyPressed) {
+        	if (key == 'c') {
+        		currentImage = currentImage + 1;
+        		
+        		if (currentImage >= 4) {
+        			
+        			currentImage = 0;
+        		}
+        		
+        		brush.setNewPainting(arr[currentImage]);
+        		
+        	}
             if (key == 'r') {
                 image(canvas, 0, 0);
             } else if (key == 32) {
